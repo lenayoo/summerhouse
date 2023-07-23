@@ -13,7 +13,7 @@ function Contact() {
           </p>
         </div>
         <div>
-          <img src="/public/contact2.JPG" className="contact-img" />
+          <img src="/contact2.JPG" className="contact-img" />
         </div>
       </div>
     </>

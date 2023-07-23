@@ -5,7 +5,7 @@ function About() {
     <>
       <Nav />
       <div className="about-intro">
-        <img src="/public/main-4.JPG" alt="mom and niece" className="about" />
+        <img src="/main-4.JPG" alt="mom and niece" className="about" />
         <div className="about-intro__text">
           <p>
             공기 좋고 물 맑은 누구나{'  '}
