@@ -1,6 +1,6 @@
 .body {
   margin: 0 auto;
-  background-image: url(./img/main-2.JPG);
+  background-image: url(../public/main-2.JPG);
   background-size: cover;
   color: white;
   width: 100vw;
@@ -31,4 +31,24 @@ ul {
 li {
   list-style: none;
   margin: 0 30px;
+}
+
+/* about */
+
+.about {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  margin-left: 5%;
+}
+
+.about-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.about-intro__text {
+  width: 35%;
+  font-size: 24px;
 }
