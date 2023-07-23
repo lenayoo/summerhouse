@@ -9,7 +9,9 @@ function Sightseeing() {
   return (
     <>
       <Nav />
-      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+      <LoadScript
+        googleMapsApiKey={import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY}
+      >
         <GoogleMap
           id="googleMap" // 지도를 보여줄 DOM 요소의 ID
           mapContainerStyle={{ width: '100%', height: '400px' }} // 지도의 크기 설정
