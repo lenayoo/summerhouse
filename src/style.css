@@ -60,3 +60,12 @@ li {
   align-items: center;
   text-align: center;
 }
+
+/* contact */
+.contact {
+  margin-left: 3%;
+}
+.contact-img {
+  width: 600px;
+  border-radius: 15px;
+}
