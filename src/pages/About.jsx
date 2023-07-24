@@ -1,6 +1,26 @@
 import Nav from './Nav'
+import { useState, useEffect } from 'react'
 
 function About() {
+  // display size': width 950px 반응형 넣기
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const [screenHeight, setScreenHeight] = useState(window.innerHeight)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth)
+      setScreenHeight(window.innerHeight)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  console.log(screenWidth, screenHeight)
+
   return (
     <>
       <Nav />

@@ -34,19 +34,12 @@ li {
   margin: 0 30px;
 }
 
-/* 370px 이하일 때의 스타일 */
-@media (max-width: 370px) {
-  .nav {
-    flex-direction: column;
-    font-size: 18px;
-  }
-
+/* 950px 이하일 때의 스타일 */
+@media screen and (max-width: 950px) {
   ul {
+    display: flex;
     flex-direction: column;
-  }
-
-  li {
-    margin: 10px 0;
+    text-align: center;
   }
 }
 

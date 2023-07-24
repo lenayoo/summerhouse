@@ -1,7 +1,27 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../style.css'
 
 function Nav() {
+  // display size': width 950px 반응형 넣기
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const [screenHeight, setScreenHeight] = useState(window.innerHeight)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth)
+      setScreenHeight(window.innerHeight)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  console.log(screenWidth, screenHeight)
+
   return (
     <div className="nav">
       <div>
