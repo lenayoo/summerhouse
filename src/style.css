@@ -13,6 +13,7 @@
 }
 
 /* Navbar */
+/* 기본 스타일 */
 .nav {
   display: flex;
   justify-content: space-around;
@@ -31,6 +32,22 @@ ul {
 li {
   list-style: none;
   margin: 0 30px;
+}
+
+/* 370px 이하일 때의 스타일 */
+@media (max-width: 370px) {
+  .nav {
+    flex-direction: column;
+    font-size: 18px;
+  }
+
+  ul {
+    flex-direction: column;
+  }
+
+  li {
+    margin: 10px 0;
+  }
 }
 
 /* about */
