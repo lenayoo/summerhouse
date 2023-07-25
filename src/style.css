@@ -66,6 +66,11 @@ li {
   .about-intro__text {
     width: 60% !important;
   }
+
+  .about-img {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .about-intro__text {
