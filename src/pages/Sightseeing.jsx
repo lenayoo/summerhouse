@@ -1,15 +1,18 @@
 import Nav from './Nav'
-import { GoogleMap, LoadScript } from '@react-google-maps/api'
+// import { GoogleMap, LoadScript } from '@react-google-maps/api'
 
 function Sightseeing() {
-  const center = {
-    lat: 37.275928,
-    lng: 127.630842,
-  }
+  // const center = {
+  //   lat: 37.275928,
+  //   lng: 127.630842,
+  // }
   return (
     <>
       <Nav />
-      <LoadScript
+      <div className="sightseeing-map">
+        <img src="/public/map1.png" alt="yeoju-map" className="yeoju-map" />
+      </div>
+      {/* <LoadScript
         googleMapsApiKey={import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY}
       >
         <GoogleMap
@@ -18,7 +21,7 @@ function Sightseeing() {
           center={center} // 지도의 초기 중심 위치 설정
           zoom={13} // 지도의 초기 줌 레벨 설정
         />
-      </LoadScript>
+      </LoadScript> */}
     </>
   )
 }

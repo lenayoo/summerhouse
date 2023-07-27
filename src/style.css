@@ -86,6 +86,23 @@ li {
   text-align: center;
 }
 
+/* sightseeing */
+.sightseeing-map {
+  display: flex;
+  justify-content: center;
+  width: 10;
+}
+
+.yeoju-map {
+  width: 70%;
+}
+
+@media screen and (max-width: 768px) {
+  .yeoju-map {
+    width: 90%;
+  }
+}
+
 /* contact */
 .contact {
   margin-left: 3%;
