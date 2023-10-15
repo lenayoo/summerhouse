@@ -15,6 +15,11 @@ function Contact() {
         <div>
           <img src="/contact2.JPG" className="contact-img" />
         </div>
+        <div>
+          <p>
+            방명록을 남겨주세요!
+          </p>
+        </div>
       </div>
     </>
   )
