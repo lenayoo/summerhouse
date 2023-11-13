@@ -1,4 +1,10 @@
-
+:root {
+  --light-green: #F0F7D4;
+  --bright-green: #B2D732;
+  --bright-purple: #4424D6;
+  --bright-orange: #FC600A;
+  --dark-navy: #110934;
+}
 
 .body {
   margin: 0 auto;
@@ -93,6 +99,12 @@ li {
   color: black;
   padding: 3px !important;
   border-radius: 15px !important;
+}
+
+.submit-btn {
+  background-color: var(--bright-green);
+  color: var(--bright-purple);
+  margin: 1rem 0;
 }
 
 .underline {

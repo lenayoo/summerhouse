@@ -5,7 +5,9 @@ import "react-calendar/dist/Calendar.css";
 import "../style.css";
 
 function Reserve() {
-  const [selectedDate, setSelectedDate] = useState(null);
+  const today = new Date().toDateString();
+
+  const [selectedDate, setSelectedDate] = useState(today);
   const [reservedDates, setReservedDates] = useState([]);
 
   const handleDateChange = (date) => {
@@ -32,7 +34,9 @@ function Reserve() {
           <div className="reserve-calendar">
             <Calendar value={selectedDate} onChange={handleDateChange} />
           </div>
-          <button onClick={submitHandler}>Submit</button>
+          <button onClick={submitHandler} className="submit-btn">
+            Submit
+          </button>
         </form>
         <div className="selected-date">
           The day you've selected is:{" "}
@@ -41,11 +45,12 @@ function Reserve() {
         </div>
         <div className="underline"></div>
         <div className="reserved-days">
-          {reservedDates.map((date) => (
-            <div key={date.index} className="reserved-date">
-              {date}
-            </div>
-          ))}
+          {reservedDates &&
+            reservedDates.map((date) => (
+              <div key={date.index} className="reserved-date">
+                {date}
+              </div>
+            ))}
         </div>
       </div>
     </>
