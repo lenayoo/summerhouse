@@ -7,32 +7,58 @@ import "../style.css";
 function Reserve() {
   const today = new Date().toDateString();
 
-  const [selectedDate, setSelectedDate] = useState(today);
+  // const [selectedDate, setSelectedDate] = useState(today);
   const [reservedDates, setReservedDates] = useState([]);
+  // const [bookedPerson, setBookedPerson] = useState("");
+
+  const [reservation, setReservation] = useState({ person: "", date: today });
 
   const handleDateChange = (date) => {
     console.log("date", date);
-    setSelectedDate(date.toDateString());
+    setReservation((prevReservation) => ({
+      ...prevReservation,
+      date: date.toDateString(),
+    }));
+  };
+
+  const handlePersonChange = (e) => {
+    const { name, value } = e.target;
+    setReservation((prevReservation) => ({
+      ...prevReservation,
+      [name]: value,
+    }));
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    setReservedDates((preReserved) => [...preReserved, selectedDate]);
+    if (reservation.person && reservation.date) {
+      setReservedDates((preDate) => [...preDate, reservation]);
+      setReservation({ person: "", date: today });
+    }
   };
-
-  console.log(reservedDates);
 
   return (
     <>
       <Nav />
       <div className="reserve">
         <div>
-          <h3>Please select the day you want to reserve</h3>
+          <h3>
+            Please select the day you want to reserve <br />
+            and leave your name with it!
+          </h3>
         </div>
         <form>
+          <div className="reserved-person">
+            <label>Name: </label>
+            <input
+              name="person"
+              value={reservation.person}
+              onChange={handlePersonChange}
+            />
+          </div>
           <div className="reserve-calendar">
-            <Calendar value={selectedDate} onChange={handleDateChange} />
+            <Calendar value={reservation.date} onChange={handleDateChange} />
           </div>
           <button onClick={submitHandler} className="submit-btn">
             Submit
@@ -40,15 +66,18 @@ function Reserve() {
         </form>
         <div className="selected-date">
           The day you've selected is:{" "}
-          <strong>{selectedDate && selectedDate}</strong>. <br />
+          <strong>{reservation.date && reservation.date}</strong>. <br />
           If you want to book the date, please click submit button.
         </div>
         <div className="underline"></div>
+        <h3>
+          {reservedDates.length > 0 && "Below dates are already reserved!"}
+        </h3>
         <div className="reserved-days">
           {reservedDates &&
-            reservedDates.map((date) => (
-              <div key={date.index} className="reserved-date">
-                {date}
+            reservedDates.map((reservation, index) => (
+              <div key={index} className="reserved-date">
+                {`Date: ${reservation.date},  Name: ${reservation.person}`}
               </div>
             ))}
         </div>

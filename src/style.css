@@ -101,6 +101,12 @@ li {
   border-radius: 15px !important;
 }
 
+.reserved-person {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
 .submit-btn {
   background-color: var(--bright-green);
   color: var(--bright-purple);
