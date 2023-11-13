@@ -39,9 +39,12 @@ function Reserve() {
           <strong>{selectedDate && selectedDate}</strong>. <br />
           If you want to book the date, please click submit button.
         </div>
-        <div className="reserved-date">
+        <div className="underline"></div>
+        <div className="reserved-days">
           {reservedDates.map((date) => (
-            <div key={date.index}>{date}</div>
+            <div key={date.index} className="reserved-date">
+              {date}
+            </div>
           ))}
         </div>
       </div>

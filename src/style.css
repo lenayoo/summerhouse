@@ -95,6 +95,25 @@ li {
   border-radius: 15px !important;
 }
 
+.underline {
+  width: 90%;
+  height: 2px;
+  background-color: gray;
+  margin: 2rem 0;
+}
+
+.reserved-days {
+  margin-top: 10px;
+}
+
+.reserved-date {
+  background-color: beige;
+  color: black;
+  margin: 10px;
+  padding: 3px;
+  border-radius: 4px;
+}
+
 /* sightseeing */
 .sightseeing-map {
   display: flex;
