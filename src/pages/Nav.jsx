@@ -18,9 +18,7 @@ function Nav() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
-
-  console.log(screenWidth, screenHeight);
+  }, [window.innerWidth]);
 
   return (
     <div className="nav">

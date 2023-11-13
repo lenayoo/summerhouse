@@ -6,10 +6,21 @@ import "../style.css";
 
 function Reserve() {
   const [selectedDate, setSelectedDate] = useState(null);
+  const [reservedDates, setReservedDates] = useState([]);
 
   const handleDateChange = (date) => {
-    setSelectedDate(date);
+    console.log("date", date);
+    setSelectedDate(date.toDateString());
   };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    setReservedDates((preReserved) => [...preReserved, selectedDate]);
+  };
+
+  console.log(reservedDates);
+
   return (
     <>
       <Nav />
@@ -21,10 +32,17 @@ function Reserve() {
           <div className="reserve-calendar">
             <Calendar value={selectedDate} onChange={handleDateChange} />
           </div>
-          <button>Submit</button>
+          <button onClick={submitHandler}>Submit</button>
         </form>
-        <div>
-          {/* 예약하기 버튼 또는 다음 단계로 이동하는 버튼 등 추가적인 내용 */}
+        <div className="selected-date">
+          The day you've selected is:{" "}
+          <strong>{selectedDate && selectedDate}</strong>. <br />
+          If you want to book the date, please click submit button.
+        </div>
+        <div className="reserved-date">
+          {reservedDates.map((date) => (
+            <div key={date.index}>{date}</div>
+          ))}
         </div>
       </div>
     </>
