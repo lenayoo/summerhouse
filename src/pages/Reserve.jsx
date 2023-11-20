@@ -77,7 +77,7 @@ function Reserve() {
           {reservedDates &&
             reservedDates.map((reservation, index) => (
               <div key={index} className="reserved-date">
-                {`Date: ${reservation.date},  Name: ${reservation.person}`}
+                {` Name: ${reservation.person}, Date: ${reservation.date}`}
               </div>
             ))}
         </div>
