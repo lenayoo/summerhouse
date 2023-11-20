@@ -30,6 +30,9 @@ function Nav() {
           <Link to="/">Home</Link>
         </li>
         <li>
+          <Link to="/signup">Signup</Link>
+        </li>
+        <li>
           <Link to="/about">About</Link>
         </li>
         <li>
