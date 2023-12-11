@@ -5,7 +5,9 @@ function Signup() {
   return (
     <>
       <Nav />
-      <div>Sign up</div>
+      <div className="signup" style={c}>
+        Sign up
+      </div>
     </>
   );
 }
